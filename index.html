@@ -22,22 +22,22 @@
           }
     </py-config>
     <py-script>
-      import matplotlib.pyplot as plt
-      from data import make_x_and_y
-      x, y = make_x_and_y(n=1000)
-      fig, ax = plt.subplots()
-      ax.scatter(x, y)
-      display(fig, target="plot")
+        import matplotlib.pyplot as plt
+from data import make_x_and_y
+x, y = make_x_and_y(n=1000)
+fig, ax = plt.subplots()
+ax.scatter(x, y)
+display(fig, target="plot")
 
-      def write_to_page():
-      manual_div = Element("manual-write")
-      manual_div.element.innerHTML = "<p><b>Hello World</b></p>"
+def write_to_page():
+    manual_div = Element("manual-write")
+    manual_div.element.innerHTML = "<p><b>Hello World</b></p>"
 
-    def display_to_div():
-      display("I display things!", target="display-write")
+def display_to_div():
+    display("I display things!", target="display-write")
 
-    def print_to_page():
-      print("I print things!")
+def print_to_page():
+    print("I print things!")
     </py-script>
   </body>
 </html>
