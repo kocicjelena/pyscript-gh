@@ -15,16 +15,16 @@
 
     <py-config type="json">
         {
-            "packages": ["numpy", "matplotlib"],
+            "packages": ["numpy", "matplotlib","pyttsx3"],
             "fetch": [{
               "files": ["./data.py"]
             }]
           }
     </py-config>
     <py-script>
-        import matplotlib.pyplot as plt
-        from data import make_x_and_y
-
+import matplotlib.pyplot as plt
+from data import make_x_and_y
+import pyttsx3
 x, y = make_x_and_y(n=1000)
 fig, ax = plt.subplots()
 ax.scatter(x, y)
@@ -39,6 +39,13 @@ def display_to_div():
 
 def print_to_page():
     print("I print things!")
+speak = pyttsx3.init()
+t = "I will speak this text"
+speak.say(t)
+speak.runAndWait()
+insert_rec = popup.getElementById('rec')
+speak.save_to_file(t, 'new.mp3') 
+speak.stop()
     </py-script>
   </body>
 </html>
